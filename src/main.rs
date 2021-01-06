@@ -1,3 +1,31 @@
+// reqwest_client/src/main.rs
+use serde::{Deserialize};
+
+#[derive(Deserialize)]
+struct Simple {
+   origin: String
+}
+
+fn main() -> Result<(), reqwest::Error> {
+    let res = reqwest::blocking::get("http://httpbin.org/get")?.json::<Simple>()?;
+    /*
+    println!("Status: {}", res.status());
+    println!("Headers:{:#?}", res.headers());
+    */
+ 
+    // let body = res.json::<Simple>().await?;
+    println!("{}", res.origin);
+
+    let res = reqwest::blocking::get("http://httpbin.org/get")?.json::<Simple>()?;
+    println!("{}", res.origin);
+
+    let res = reqwest::blocking::get("http://httpbin.org/get")?.json::<Simple>()?;
+    println!("{}", res.origin);
+
+    Ok(())
+}
+
+/*
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
 #[get("/")]
@@ -26,3 +54,4 @@ async fn main() -> std::io::Result<()> {
     .run()
     .await
 }
+*/
