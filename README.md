@@ -1,6 +1,6 @@
 # rust 
 
-tutorial
+Tutorial
 
 https://tourofrust.com/
 
