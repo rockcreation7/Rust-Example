@@ -1,6 +1,6 @@
 # Rust 
 
-Example of different implementation on commom subject
+Example of different implementation on common subject
 
 ---
 
