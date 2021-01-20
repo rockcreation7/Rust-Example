@@ -85,7 +85,7 @@ impl Snake {
                 y: last_y + 1,
             },
             Direction::Left => Block {
-                x: last_x + 1,
+                x: last_x - 1,
                 y: last_y,
             },
             Direction::Right => Block{
@@ -136,7 +136,7 @@ impl Snake {
                 return true;
             }
             ch += 1;
-            if ch == self.body.len() -1 {
+            if ch == self.body.len() -1{
                 break;
             }
         }
