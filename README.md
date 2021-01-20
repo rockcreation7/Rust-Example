@@ -1,6 +1,6 @@
 # Rust 
 
-Example of different implementation
+Example of different implementation on different subject
 
 Tutorial
 
