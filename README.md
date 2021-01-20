@@ -1,5 +1,7 @@
 # Rust 
 
+Example of different implementation
+
 Tutorial
 
 https://tourofrust.com/
