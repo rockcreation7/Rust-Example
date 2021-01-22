@@ -4,7 +4,7 @@ Example of different implementation on common subject
 
 Finished :
 
-1. hyper request - make request to server
+1. tokio-hyper - make request to server
 2. pgsql - connection with DB
 3. snake - a game
 
