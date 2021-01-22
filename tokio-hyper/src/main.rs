@@ -9,16 +9,24 @@ use tokio::io::{self, AsyncWriteExt as _};
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     // This is where we will setup our HTTP client requests.
 
+    // uncomment following function to get the result
+    // get().await;
+    // post().await;
+    // mutiple_post().await;
+
+    Ok(())
+} 
+ 
+async fn get() -> Result<(),  Box<dyn std::error::Error + Send + Sync>> {
+     
     let client = Client::new();
     let uri = "http://httpbin.org/ip".parse()?;
     let mut resp = client.get(uri).await?;
     println!("Response: {}", resp.status());
-
+   
     while let Some(chunk) = resp.body_mut().data().await {
         io::stdout().write_all(&chunk?).await?;
-    }
-
-    post().await;
+    }   
 
     Ok(())
 }
@@ -46,3 +54,25 @@ async fn post() -> Result<(),  Box<dyn std::error::Error + Send + Sync>> {
     // We'll send it in a second...
     Ok(())
 }
+
+async fn mutiple_post() -> Result<(),  Box<dyn std::error::Error + Send + Sync>> {
+
+    let client = Client::new();
+
+    let ip_fut = async {
+        let resp = client.get(Uri::from_static("http://httpbin.org/ip")).await?;
+        hyper::body::to_bytes(resp.into_body()).await
+    };
+    let headers_fut = async {
+        let resp = client.get(Uri::from_static("http://httpbin.org/headers")).await?;
+        hyper::body::to_bytes(resp.into_body()).await
+    };
+    
+    // Wait on both them at the same time:
+    let (ip, headers) = futures::try_join!(ip_fut, headers_fut)?;
+
+    println!("{:?}{:?}", ip, headers);
+
+    Ok(())
+}
+ 
