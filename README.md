@@ -4,7 +4,7 @@ Example of different implementation on common subject
 
 Finished 
 
-1. hyper 
+1. hyper request
 
 ---
 
