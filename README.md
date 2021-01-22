@@ -2,7 +2,7 @@
 
 Example of different implementation on common subject
 
-Finished 
+Finished :
 
 1. hyper request - make request to server
 2. pgsql - connection with DB
