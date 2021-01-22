@@ -7,6 +7,7 @@ Finished :
 1. tokio-hyper - make request to server
 2. pgsql - connection with DB
 3. snake - a game
+4. hyper-server - server with different route
 
 Unfinished :
 
