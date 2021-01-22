@@ -8,6 +8,10 @@ Finished :
 2. pgsql - connection with DB
 3. snake - a game
 
+Unfinished :
+
+- diesel_demo
+
 ---
 
 Reference Tutorial
