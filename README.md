@@ -2,6 +2,16 @@
 
 Example of different implementation on common subject
 
+Finished :
+
+1. tokio-hyper - make request to server
+2. pgsql - connection with DB
+3. snake - a game
+
+Unfinished :
+
+- diesel_demo
+
 ---
 
 Reference Tutorial
