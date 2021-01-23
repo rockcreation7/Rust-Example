@@ -8,6 +8,8 @@ Finished :
 2. pgsql - connection with DB
 3. snake - a game
 4. hyper-server - server with different route
+5. actrix - api server
+
 
 Unfinished :
 
